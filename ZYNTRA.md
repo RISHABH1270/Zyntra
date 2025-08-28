@@ -167,13 +167,13 @@ Open `http://localhost:3000` in your browser. You should see:
 
 ```
 zyntra/
-├── 📁 public/                              # Static public assets served directly by the server
-│   ├── favicon.ico                         # Icon displayed in the browser tab
-│   ├── index.html                          # Root HTML template for the single-page app
-│   ├── logo192.png                         # Icon for Progressive Web App (192x192)
-│   ├── logo512.png                         # Icon for Progressive Web App (512x512)
-│   ├── manifest.json                       # PWA metadata and configuration file
-│   └── robots.txt                          # Rules for search engine crawlers (SEO settings)
+├── 📁 public/                               # Static public assets served directly by the server
+│   ├── favicon.ico                          # Icon displayed in the browser tab
+│   ├── index.html                           # Root HTML template for the single-page app
+│   ├── logo192.png                          # Icon for Progressive Web App (192x192)
+│   ├── logo512.png                          # Icon for Progressive Web App (512x512)
+│   ├── manifest.json                        # PWA metadata and configuration file
+│   └── robots.txt                           # Rules for search engine crawlers (SEO settings)
 ├── 📁 src/                                  # Main application source code
 │   ├── 📁 customer/                         # Customer-facing modules and UI components
 │   │   ├── 📁 components/                   # Reusable UI components for the customer interface
