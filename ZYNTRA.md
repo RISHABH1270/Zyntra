@@ -25,7 +25,7 @@ Welcome to the complete guide for understanding and running the Zyntra E-commerc
 - **React 19.1.1**: Latest React library with concurrent features for building fast, dynamic, and scalable apps.  
 - **E-commerce Focus**: Tailored setup for online retail platforms with smooth product browsing and checkout experiences.  
 - **Professional Navigation**: Headless UI flyout menus for advanced, responsive, and accessible navigation.  
-- **Interactive Carousel**: Alice Carousel for showcasing products, promotions, or featured items in a sleek sliding format.  
+- **Interactive Carousel**: Alice Carousel for showcasing products, promotions, images in a sleek sliding format.  
 - **Material-UI Integration**: Ready-to-use professional UI components for polished, modern interfaces.  
 - **Headless UI Components**: Unstyled, accessible components for full customization while keeping accessibility standards.  
 - **Heroicons**: Hand-crafted SVG icons for clean, scalable, and visually consistent design.  
@@ -167,65 +167,40 @@ Open `http://localhost:3000` in your browser. You should see:
 
 ```
 zyntra/
-├── 📁 public/                              # Static assets served directly
-│   ├── favicon.ico                        # Browser tab icon
-│   ├── index.html                        # HTML template (single page)
-│   ├── logo192.png                       # PWA icon (192x192)
-│   ├── logo512.png                       # PWA icon (512x512)
-│   ├── manifest.json                     # PWA configuration
-│   └── robots.txt                        # Search engine crawling rules
-├── 📁 src/                                # Application source code
-│   ├── 📁 assets/                         # Static assets (images, banners)
-│   │   └── 📁 banners/                    # Banner images for carousel
-│   │       ├── Banner1.webp               # WebP optimized banner image
-│   │       ├── Banner2.avif               # AVIF optimized banner image
-│   │       └── Banner3.webp               # WebP optimized banner image
-│   ├── 📁 customer/                       # Customer-facing modules
-│   │   ├── 📁 components/                 # Reusable customer components
-│   │   │   ├── 📁 Navigation/             # Navigation component
-│   │   │   │   └── Navigation.jsx         # Advanced e-commerce navigation
-│   │   │   └── 📁 HomeCarousel/           # Carousel component
-│   │   │       ├── MainCarousel.jsx      # Alice Carousel implementation
-│   │   │       └── MainCarouselData.js   # Carousel data configuration
-│   │   └── 📁 pages/                      # Customer pages
-│   │       └── 📁 HomePage/               # Home page
-│   │           └── HomePage.jsx           # Home page component
-│   ├── App.css                           # App component styles
-│   ├── App.js                            # Root React component with navigation
-│   ├── App.test.js                       # App component tests
-│   ├── index.css                         # Global styles + Tailwind imports
-│   ├── index.js                          # React application entry point
-│   ├── logo.svg                          # React logo asset
-│   ├── reportWebVitals.js                # Performance monitoring
-│   └── setupTests.js                     # Jest test configuration
-├── 📄 package.json                       # Dependencies & scripts (updated)
-├── 📄 package-lock.json                  # Exact dependency versions
-├── 📄 postcss.config.js                  # PostCSS configuration
-├── 📄 tailwind.config.js                 # Tailwind CSS configuration
-├── 📄 README.md                          # Project documentation
-└── 📄 ZYNTRA.md                          # This comprehensive tutorial
+├── 📁 public/                              # Static public assets served directly by the server
+│   ├── favicon.ico                         # Icon displayed in the browser tab
+│   ├── index.html                          # Root HTML template for the single-page app
+│   ├── logo192.png                         # Icon for Progressive Web App (192x192)
+│   ├── logo512.png                         # Icon for Progressive Web App (512x512)
+│   ├── manifest.json                       # PWA metadata and configuration file
+│   └── robots.txt                          # Rules for search engine crawlers (SEO settings)
+├── 📁 src/                                  # Main application source code
+│   ├── 📁 customer/                         # Customer-facing modules and UI components
+│   │   ├── 📁 components/                   # Reusable UI components for the customer interface
+│   │   │   ├── 📁 Navigation/               # Navigation bar for customer-facing pages
+│   │   │   │   └── Navigation.jsx           # React component for advanced e-commerce navigation
+│   │   │   └── 📁 HomeCarousel/             # Home page carousel module
+│   │   │       └── MainCarousel.jsx         # Carousel implementation using Alice Carousel library
+│   │   └── 📁 pages/                        # Individual customer-facing page modules
+│   │       └── 📁 HomePage/                 # Home page module
+│   │           └── HomePage.jsx             # React component rendering the home page
+│   ├── App.css                              # Global styles specific to the App component
+│   ├── App.js                               # Root React component managing routing and layout
+│   ├── App.test.js                          # Unit tests for the App component
+│   ├── index.css                            # Global CSS styles and Tailwind imports
+│   ├── index.js                             # React entry point, bootstraps the app into the DOM
+│   ├── logo.svg                             # Default React logo asset for placeholders or demos
+│   ├── reportWebVitals.js                   # Performance metrics and monitoring setup
+│   └── setupTests.js                        # Test environment configuration for Jest
+├── 📄 package.json                          # Project dependencies, scripts, and metadata
+├── 📄 package-lock.json                     # Locked versions of dependencies for reproducible builds
+├── 📄 postcss.config.js                     # PostCSS plugins configuration for styling
+├── 📄 tailwind.config.js                    # Tailwind CSS customization and theme configuration
+├── 📄 README.md                             # Project overview, setup, and usage instructions
+└── 📄 ZYNTRA_TUTORIAL.md                    # Comprehensive tutorial and developer guide
 ```
 
 ### Key Files Explained:
-
-#### `src/assets/` - Static Assets Organization
-
-**Purpose**: Centralized location for all static assets with optimized formats
-
-**Structure**:
-```
-assets/
-└── banners/                    # Banner images for homepage carousel
-    ├── Banner1.webp           # WebP format for modern browsers
-    ├── Banner2.avif           # AVIF format for cutting-edge compression
-    └── Banner3.webp           # WebP format for performance optimization
-```
-
-**Benefits**:
-- **Modern Image Formats**: WebP and AVIF provide superior compression
-- **Performance Optimization**: Smaller file sizes for faster loading
-- **Organized Structure**: Easy to manage and extend with more asset types
-- **Import Management**: Clean import paths in components
 
 #### `src/index.js` - Application Entry Point
 ```javascript
@@ -320,12 +295,7 @@ App (Root)
 │   └── User Authentication Links
 └── HomePage
     ├── MainCarousel
-    │   ├── Alice Carousel Component
-    │   ├── MainCarouselData (Banner Images)
-    │   └── Assets Integration
-    │       ├── Banner1.webp (WebP Format)
-    │       ├── Banner2.avif (AVIF Format)
-    │       └── Banner3.webp (WebP Format)
+    │   └── Alice Carousel Component
     └── Other Sections (Future)
 ```
 
@@ -387,13 +357,12 @@ const HomePage = () => {
 
 #### 3. **MainCarousel Component** (`src/customer/components/HomeCarousel/MainCarousel.jsx`)
 
-**Purpose**: Interactive banner showcase carousel with optimized images
+**Purpose**: Interactive product showcase carousel
 
 **Technical Implementation**:
 ```javascript
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
-import { MainCarouselData } from './MainCarouselData';
 
 const MainCarousel = () => (
   <AliceCarousel
@@ -406,33 +375,9 @@ const MainCarousel = () => (
 
 **Features**:
 - Touch/mouse interaction support
-- Responsive design with modern image formats (WebP/AVIF)
+- Responsive design
 - Configurable controls
-- Optimized banner images for fast loading
-- Data separation with MainCarouselData.js
-
-#### 4. **MainCarouselData Component** (`src/customer/components/HomeCarousel/MainCarouselData.js`)
-
-**Purpose**: Centralized data configuration for carousel banners
-
-**Technical Implementation**:
-```javascript
-import banner1 from '../../../assets/banners/Banner1.webp';
-import banner2 from '../../../assets/banners/Banner2.avif';
-import banner3 from '../../../assets/banners/Banner3.webp';
-
-export const MainCarouselData = [
-  { image: banner1 },
-  { image: banner2 },
-  { image: banner3 },
-];
-```
-
-**Features**:
-- Modern image format support (WebP, AVIF)
-- Centralized banner management
-- Easy to extend with additional banner properties
-- Optimized for performance with next-gen image formats
+- Ready for product image integration
 
 ### Component Design Patterns
 
