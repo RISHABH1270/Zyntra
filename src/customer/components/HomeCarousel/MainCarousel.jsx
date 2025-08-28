@@ -1,12 +1,17 @@
-import React from 'react'
-import { MainCarouselData } from './MainCarouselData';
-import AliceCarousel from 'react-alice-carousel';
-import 'react-alice-carousel/lib/alice-carousel.css';
+import React from "react";
+import { MainCarouselData } from "./MainCarouselData";
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
 
 const MainCrosel = () => {
-  const items = MainCarouselData.map((item) => 
-    <img className='cursor-pointer' role='presentation' src={item.image} alt='' />
-  );
+  const items = MainCarouselData.map((item) => (
+    <img
+      className="cursor-pointer"
+      role="presentation"
+      src={item.image}
+      alt=""
+    />
+  ));
 
   return (
     <AliceCarousel
@@ -17,6 +22,6 @@ const MainCrosel = () => {
       infinite
     />
   );
-}
+};
 
 export default MainCrosel;
